@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ruetd — Independent AgTech Advisory</title>
+  
+  <!-- Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              black: '#231f20',
+              coral: '#da5841',
+              'coral-hover': '#c44b35',
+              canvas: '#F8FAFC',
+              card: '#FFFFFF',
+              muted: '#64748B',
+              border: '#E2E8F0',
+              'dark-border': '#231f20'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Architectural Sharpness & Grid Lines */
+    body {
+      background-color: #F8FAFC;
+      color: #231f20;
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    .mono-tag {
+      font-family: 'JetBrains Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Custom sharp border grid line background effect for hero */
+    .bg-grid-pattern {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(35, 31, 32, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(35, 31, 32, 0.03) 1px, transparent 1px);
+    }
+
+    input, textarea, select {
+      border-radius: 0px !important;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-brand-coral selection:text-white">
+
+  <!-- ================= HEADER ================= -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-[#F8FAFC]/90 backdrop-blur-md border-b border-brand-black/10">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-2 group">
+        <span class="font-mono text-2xl font-bold tracking-tighter text-brand-black">RUETD<span class="text-brand-coral">.</span></span>
+        <span class="hidden sm:inline-block text-[10px] font-mono uppercase bg-brand-black/5 px-2 py-0.5 text-brand-muted tracking-wider border border-brand-black/10">Advisory</span>
+      </a>
+
+      <!-- Essential Navigation -->
+      <nav class="hidden md:flex items-center gap-10">
+        <a href="#philosophy" class="text-sm font-medium text-brand-black hover:text-brand-coral transition-colors">Philosophy</a>
+        <a href="#focus" class="text-sm font-medium text-brand-black hover:text-brand-coral transition-colors">Services</a>
+        <a href="#framework" class="text-sm font-medium text-brand-black hover:text-brand-coral transition-colors">Framework</a>
+        <a href="#contact" class="text-sm font-medium text-brand-black hover:text-brand-coral transition-colors">Contact</a>
+      </nav>
+
+      <!-- Action Button -->
+      <div class="flex items-center gap-4">
+        <a href="#contact" class="hidden sm:inline-flex items-center justify-center bg-brand-black text-white text-xs font-mono font-medium tracking-wider uppercase px-5 py-3 border border-brand-black hover:bg-brand-coral hover:border-brand-coral transition-all duration-150">
+          Book Audit
+        </a>
+        
+        <!-- Mobile Menu Toggle Button -->
+        <button id="menu-toggle" class="md:hidden p-2 text-brand-black border border-brand-black/20 focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path id="menu-icon" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden border-b border-brand-black/10 bg-[#F8FAFC] px-6 py-6">
+      <div class="flex flex-col space-y-4">
+        <a href="#philosophy" class="text-base font-medium text-brand-black hover:text-brand-coral">Philosophy</a>
+        <a href="#focus" class="text-base font-medium text-brand-black hover:text-brand-coral">Services</a>
+        <a href="#framework" class="text-base font-medium text-brand-black hover:text-brand-coral">Framework</a>
+        <a href="#contact" class="text-base font-medium text-brand-black hover:text-brand-coral">Contact</a>
+        <a href="#contact" class="inline-block text-center bg-brand-coral text-white text-xs font-mono font-medium tracking-wider uppercase py-3 border border-brand-coral">
+          Book Audit
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-20">
+
+    <!-- ================= HERO SECTION ================= -->
+    <section id="philosophy" class="relative bg-grid-pattern border-b border-brand-black/10 py-20 lg:py-32">
+      <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+        
+        <!-- Subtle Status Badge -->
+        <div class="inline-flex items-center gap-3 px-3 py-1.5 border border-brand-black/15 bg-white mb-8">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span class="mono-tag text-xs font-semibold text-brand-black tracking-wide">Status: Accepting Q3 Engagements</span>
+        </div>
+
+        <!-- High-Impact Value Statement -->
+        <div class="max-w-5xl">
+          <h1 class="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-brand-black leading-[1.08] mb-8">
+            Unbiased AgTech Execution.<br>
+            <span class="font-normal italic text-brand-muted">Zero Kickbacks. Grounded Logic.</span>
+          </h1>
+          
+          <p class="text-lg sm:text-xl text-brand-black/80 max-w-3xl font-normal leading-relaxed mb-10">
+            We are a high-rigor, independent advisory firm serving farm operations and agricultural technology companies. We eliminate software bloat, pressure-test deployments in real dirt, and engineer products that actually work at farm scale.
+          </p>
+
+          <!-- CTAs -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+            <a href="#contact" class="inline-flex items-center justify-center bg-brand-coral hover:bg-brand-coral-hover text-white text-sm font-mono font-semibold tracking-wider uppercase px-8 py-4 border border-brand-coral transition-colors">
+              Request a Tech Audit
+              <svg class="w-4 h-4 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="square" stroke-miterlimit="10" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </a>
+            
+            <a href="#framework" class="inline-flex items-center justify-center bg-white hover:bg-brand-black/5 text-brand-black text-sm font-mono font-medium tracking-wider uppercase px-8 py-4 border border-brand-black/20 transition-colors">
+              View Framework
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= TRUST BAR / PINNED PRINCIPLES ================= -->
+    <section class="bg-brand-black text-white border-b border-brand-black py-4">
+      <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-0 divide-y md:divide-y-0 md:divide-x divide-white/15 text-center">
+          
+          <div class="py-2 md:py-0 md:px-6 flex items-center justify-center gap-2">
+            <span class="text-brand-coral font-mono text-sm">[01]</span>
+            <span class="mono-tag text-xs font-semibold tracking-wider">100% Vendor Neutral</span>
+          </div>
+
+          <div class="py-2 md:py-0 md:px-6 flex items-center justify-center gap-2">
+            <span class="text-brand-coral font-mono text-sm">[02]</span>
+            <span class="mono-tag text-xs font-semibold tracking-wider">First-Principles Field Logic</span>
+          </div>
+
+          <div class="py-2 md:py-0 md:px-6 flex items-center justify-center gap-2">
+            <span class="text-brand-coral font-mono text-sm">[03]</span>
+            <span class="mono-tag text-xs font-semibold tracking-wider">Operator-Led Strategy</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= DUAL FOCUS (SIMPLE 2-COLUMN GRID) ================= -->
+    <section id="focus" class="py-20 lg:py-28 border-b border-brand-black/10">
+      <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+          <div>
+            <span class="mono-tag text-xs font-semibold text-brand-coral block mb-2">// ADVISORY ARCHITECTURE</span>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-brand-black">Dual-Engine Impact</h2>
+          </div>
+          <p class="text-sm font-mono text-brand-muted mt-2 md:mt-0">Bridging the operational gap between field reality and enterprise code.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          
+          <!-- Left Card: For Growers -->
+          <div class="bg-brand-card border border-brand-black/15 p-8 sm:p-12 relative flex flex-col justify-between hover:border-brand-black transition-colors">
+            <div>
+              <div class="flex items-center justify-between border-b border-brand-black/10 pb-6 mb-8">
+                <span class="mono-tag text-xs font-semibold text-brand-black tracking-widest">// FOR GROWERS & FARM MANAGERS</span>
+                <span class="text-2xl font-mono text-brand-black/20 font-bold">01</span>
+              </div>
+
+              <h3 class="text-2xl font-bold text-brand-black mb-6">Cut Bloat & Mandate ROI</h3>
+
+              <ul class="space-y-6">
+                <li class="flex items-start gap-4">
+                  <span class="flex-shrink-0 w-6 h-6 border border-brand-coral text-brand-coral font-mono text-xs flex items-center justify-center mt-0.5">✓</span>
+                  <div>
+                    <h4 class="text-base font-semibold text-brand-black">Tech Stack Optimization</h4>
+                    <p class="text-sm text-brand-muted mt-1 leading-relaxed">Audit existing subscriptions, hardware overhead, and duplicate telematics to cut waste and restore clean data flow.</p>
+                  </div>
+                </li>
+
+                <li class="flex items-start gap-4">
+                  <span class="flex-shrink-0 w-6 h-6 border border-brand-coral text-brand-coral font-mono text-xs flex items-center justify-center mt-0.5">✓</span>
+                  <div>
+                    <h4 class="text-base font-semibold text-brand-black">Rigorous Software Vetting</h4>
+                    <p class="text-sm text-brand-muted mt-1 leading-relaxed">Filter out marketing claims. We stress-test new software and sensors against ground-truth field operational constraints before you sign.</p>
+                  </div>
+                </li>
+
+                <li class="flex items-start gap-4">
+                  <span class="flex-shrink-0 w-6 h-6 border border-brand-coral text-brand-coral font-mono text-xs flex items-center justify-center mt-0.5">✓</span>
+                  <div>
+                    <h4 class="text-base font-semibold text-brand-black">Workflow & Operator Adoption</h4>
+                    <p class="text-sm text-brand-muted mt-1 leading-relaxed">Transform fragmented data into clear daily directives for field crews, ensuring long-term technological adoption.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="mt-10 pt-6 border-t border-brand-black/10 flex items-center justify-between">
+              <span class="mono-tag text-xs text-brand-muted">Target: Large-Scale Operations</span>
+              <a href="#contact" class="text-xs font-mono font-semibold text-brand-black hover:text-brand-coral uppercase tracking-wider flex items-center gap-1">
+                Audit Your Stack &rarr;
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Card: For Builders -->
+          <div class="bg-brand-card border border-brand-black/15 p-8 sm:p-12 relative flex flex-col justify-between hover:border-brand-black transition-colors">
+            <div>
+              <div class="flex items-center justify-between border-b border-brand-black/10 pb-6 mb-8">
+                <span class="mono-tag text-xs font-semibold text-brand-black tracking-widest">// FOR AG-TECH BUILDERS & FOUNDERS</span>
+                <span class="text-2xl font-mono text-brand-black/20 font-bold">02</span>
+              </div>
+
+              <h3 class="text-2xl font-bold text-brand-black mb-6">Build for Real Field Reality</h3>
+
+              <ul class="space-y-6">
+                <li class="flex items-start gap-4">
+                  <span class="flex-shrink-0 w-6 h-6 border border-brand-black text-brand-black font-mono text-xs flex items-center justify-center mt-0.5">✓</span>
+                  <div>
+                    <h4 class="text-base font-semibold text-brand-black">Field Deployment Design</h4>
+                    <p class="text-sm text-brand-muted mt-1 leading-relaxed">Structure pilot programs that respect real seasonal timelines, equipment compatibility, and limited connectivity environments.</p>
+                  </div>
+                </li>
+
+                <li class="flex items-start gap-4">
+                  <span class="flex-shrink-0 w-6 h-6 border border-brand-black text-brand-black font-mono text-xs flex items-center justify-center mt-0.5">✓</span>
+                  <div>
+                    <h4 class="text-base font-semibold text-brand-black">Pragmatic Product Validation</h4>
+                    <p class="text-sm text-brand-muted mt-1 leading-relaxed">Direct exposure to operator workflows to eliminate useless features, refine UI simplicity, and accelerate meaningful feature validation.</p>
+                  </div>
+                </li>
+
+                <li class="flex items-start gap-4">
+                  <span class="flex-shrink-0 w-6 h-6 border border-brand-black text-brand-black font-mono text-xs flex items-center justify-center mt-0.5">✓</span>
+                  <div>
+                    <h4 class="text-base font-semibold text-brand-black">Commercial Viability & Positioning</h4>
+                    <p class="text-sm text-brand-muted mt-1 leading-relaxed">Strip away tech-jargon messaging. Align your pricing, ROI messaging, and go-to-market strategy with actual farm economic decision-making.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="mt-10 pt-6 border-t border-brand-black/10 flex items-center justify-between">
+              <span class="mono-tag text-xs text-brand-muted">Target: Series A–C AgTech & OEMs</span>
+              <a href="#contact" class="text-xs font-mono font-semibold text-brand-black hover:text-brand-coral uppercase tracking-wider flex items-center gap-1">
+                Validate Product &rarr;
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= PROOF & FRAMEWORK SECTION ================= -->
+    <section id="framework" class="py-20 lg:py-28 border-b border-brand-black/10 bg-white">
+      <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+        
+        <div class="max-w-2xl mb-16">
+          <span class="mono-tag text-xs font-semibold text-brand-coral block mb-2">// ENGAGEMENT METHODOLOGY</span>
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-brand-black">The 3-Step Advisory Framework</h2>
+          <p class="text-brand-muted text-base mt-3">No endless discovery retainer loops. Clear deliverables bounded by speed, field logic, and ROI measurement.</p>
+        </div>
+
+        <!-- Clean Row-Based List -->
+        <div class="border-t border-brand-black/15">
+          
+          <!-- Step 1 -->
+          <div class="group border-b border-brand-black/15 py-8 sm:py-10 transition-colors hover:bg-[#F8FAFC]">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-baseline">
+              <div class="md:col-span-2">
+                <span class="font-mono text-sm font-semibold text-brand-coral tracking-widest">STEP 01</span>
+              </div>
+              <div class="md:col-span-4">
+                <h3 class="text-2xl font-bold text-brand-black group-hover:text-brand-coral transition-colors">Tech Stack Audit</h3>
+              </div>
+              <div class="md:col-span-6">
+                <p class="text-sm text-brand-black/80 leading-relaxed mb-3">Comprehensive 14-day diagnostic of all active software, subscriptions, telematics hardware, and data siloing across your operation or product architecture.</p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="mono-tag text-[11px] bg-brand-black/5 px-2.5 py-1 text-brand-black/70 border border-brand-black/10">Data Pipeline Review</span>
+                  <span class="mono-tag text-[11px] bg-brand-black/5 px-2.5 py-1 text-brand-black/70 border border-brand-black/10">Cost Leak Analysis</span>
+                  <span class="mono-tag text-[11px] bg-brand-black/5 px-2.5 py-1 text-brand-black/70 border border-brand-black/10">Interoperability Score</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="group border-b border-brand-black/15 py-8 sm:py-10 transition-colors hover:bg-[#F8FAFC]">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-baseline">
+              <div class="md:col-span-2">
+                <span class="font-mono text-sm font-semibold text-brand-coral tracking-widest">STEP 02</span>
+              </div>
+              <div class="md:col-span-4">
+                <h3 class="text-2xl font-bold text-brand-black group-hover:text-brand-coral transition-colors">Field Integration Plan</h3>
+              </div>
+              <div class="md:col-span-6">
+                <p class="text-sm text-brand-black/80 leading-relaxed mb-3">Ground-truth validation blueprint. We map precise protocols for field trials, crew onboarding, hardware retrofitting, and vendor accountability metrics.</p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="mono-tag text-[11px] bg-brand-black/5 px-2.5 py-1 text-brand-black/70 border border-brand-black/10">Standard Operating Procedures</span>
+                  <span class="mono-tag text-[11px] bg-brand-black/5 px-2.5 py-1 text-brand-black/70 border border-brand-black/10">Pilot Design</span>
+                  <span class="mono-tag text-[11px] bg-brand-black/5 px-2.5 py-1 text-brand-black/70 border border-brand-black/10">Vendor SLAs</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="group border-b border-brand-black/15 py-8 sm:py-10 transition-colors hover:bg-[#F8FAFC]">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-baseline">
+              <div class="md:col-span-2">
+                <span class="font-mono text-sm font-semibold text-brand-coral tracking-widest">STEP 03</span>
+              </div>
+              <div class="md:col-span-4">
+                <h3 class="text-2xl font-bold text-brand-black group-hover:text-brand-coral transition-colors">Operational Execution</h3>
+              </div>
+              <div class="md:col-span-6">
+                <p class="text-sm text-brand-black/80 leading-relaxed mb-3">On-site deployment oversight. We work alongside operators and dev teams to execute the plan, resolve edge cases in real-time, and quantify ROI.</p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="mono-tag text-[11px] bg-brand-black/5 px-2.5 py-1 text-brand-black/70 border border-brand-black/10">On-Site Supervision</span>
+                  <span class="mono-tag text-[11px] bg-brand-black/5 px-2.5 py-1 text-brand-black/70 border border-brand-black/10">Operator Training</span>
+                  <span class="mono-tag text-[11px] bg-brand-black/5 px-2.5 py-1 text-brand-black/70 border border-brand-black/10">Hard Yield / Labor Metrics</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= DIRECT CONTACT / INTAKE ================= -->
+    <section id="contact" class="py-20 lg:py-28 bg-[#F8FAFC]">
+      <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          
+          <!-- Context Column -->
+          <div class="lg:col-span-5">
+            <span class="mono-tag text-xs font-semibold text-brand-coral block mb-2">// DIRECT INTAKE</span>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-brand-black mb-6">Initiate an Engagement Audit</h2>
+            <p class="text-brand-black/80 leading-relaxed mb-8">
+              We respond to all qualified intake forms within 24 business hours. No sales reps, no fluff—you will speak directly with an advisory partner.
+            </p>
+
+            <div class="space-y-4 border-t border-brand-black/10 pt-8 font-mono text-xs">
+              <div class="flex items-center justify-between py-1">
+                <span class="text-brand-muted">Typical Audit Lead Time:</span>
+                <span class="text-brand-black font-semibold">5-7 Business Days</span>
+              </div>
+              <div class="flex items-center justify-between py-1 border-t border-brand-black/5">
+                <span class="text-brand-muted">Direct Contact:</span>
+                <a href="mailto:advisory@ruetd.com" class="text-brand-coral font-semibold hover:underline">advisory@ruetd.com</a>
+              </div>
+              <div class="flex items-center justify-between py-1 border-t border-brand-black/5">
+                <span class="text-brand-muted">HQ Location:</span>
+                <span class="text-brand-black font-semibold">Pacific Time (UTC-8)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form Container -->
+          <div class="lg:col-span-7 bg-white border border-brand-black/15 p-8 sm:p-10 relative">
+            <form id="intake-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <!-- Name -->
+                <div>
+                  <label for="name" class="mono-tag text-xs font-semibold text-brand-black block mb-2">Name *</label>
+                  <input type="text" id="name" required placeholder="John Doe" class="w-full bg-[#F8FAFC] border border-brand-black/20 p-3.5 text-sm text-brand-black focus:outline-none focus:border-brand-black transition-colors">
+                </div>
+
+                <!-- Role / Operation -->
+                <div>
+                  <label for="role" class="mono-tag text-xs font-semibold text-brand-black block mb-2">Role / Operation *</label>
+                  <input type="text" id="role" required placeholder="e.g. VP Operations / 12k Acre Grower" class="w-full bg-[#F8FAFC] border border-brand-black/20 p-3.5 text-sm text-brand-black focus:outline-none focus:border-brand-black transition-colors">
+                </div>
+              </div>
+
+              <!-- Profile Type -->
+              <div>
+                <label for="profile-type" class="mono-tag text-xs font-semibold text-brand-black block mb-2">I am representing: *</label>
+                <select id="profile-type" required class="w-full bg-[#F8FAFC] border border-brand-black/20 p-3.5 text-sm text-brand-black focus:outline-none focus:border-brand-black transition-colors">
+                  <option value="grower">Farm Manager / Grower / Ag Enterprise</option>
+                  <option value="builder">AgTech Builder / Founder / OEM</option>
+                  <option value="investor">Ag Investor / PE Advisory</option>
+                </select>
+              </div>
+
+              <!-- Primary Challenge -->
+              <div>
+                <label for="challenge" class="mono-tag text-xs font-semibold text-brand-black block mb-2">Primary Operational Challenge *</label>
+                <textarea id="challenge" rows="4" required placeholder="Briefly describe your current tech stack bottlenecks, trial constraints, or product deployment objectives..." class="w-full bg-[#F8FAFC] border border-brand-black/20 p-3.5 text-sm text-brand-black focus:outline-none focus:border-brand-black transition-colors"></textarea>
+              </div>
+
+              <!-- Submit Action -->
+              <div class="pt-2">
+                <button type="submit" id="submit-btn" class="w-full bg-brand-coral hover:bg-brand-coral-hover text-white text-xs font-mono font-semibold tracking-widest uppercase py-4 border border-brand-coral transition-colors flex items-center justify-center gap-2">
+                  <span>Send Message</span>
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="square" stroke-miterlimit="10" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                  </svg>
+                </button>
+              </div>
+
+            </form>
+
+            <!-- Success State Message (Hidden by default) -->
+            <div id="form-success" class="hidden py-12 text-center">
+              <div class="inline-flex items-center justify-center w-12 h-12 border border-emerald-500 text-emerald-600 mb-4 font-mono text-xl">✓</div>
+              <h3 class="text-2xl font-bold text-brand-black mb-2">Intake Received</h3>
+              <p class="text-sm text-brand-muted max-w-md mx-auto mb-6">Thank you. An advisory partner will review your operational context and follow up via email within 24 business hours.</p>
+              <button onclick="resetForm()" class="mono-tag text-xs text-brand-black border border-brand-black/20 px-4 py-2 hover:bg-brand-black hover:text-white transition-colors">Submit Another Request</button>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-brand-black text-white border-t border-brand-black py-12">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+      
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-12 border-b border-white/10">
+        
+        <div>
+          <span class="font-mono text-2xl font-bold tracking-tighter">RUETD<span class="text-brand-coral">.</span></span>
+          <p class="text-xs font-mono text-white/60 mt-1">High-rigor independent AgTech advisory.</p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-8 text-xs font-mono">
+          <a href="#philosophy" class="text-white/80 hover:text-brand-coral transition-colors">Philosophy</a>
+          <a href="#focus" class="text-white/80 hover:text-brand-coral transition-colors">Services</a>
+          <a href="#framework" class="text-white/80 hover:text-brand-coral transition-colors">Framework</a>
+          <a href="mailto:advisory@ruetd.com" class="text-brand-coral hover:underline">advisory@ruetd.com</a>
+        </div>
+
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 text-xs font-mono text-white/50">
+        <div>
+          &copy; <span id="year"></span> Ruetd Advisory LLC. All rights reserved. Zero vendor kickbacks policy enforced.
+        </div>
+        <div class="flex items-center gap-4">
+          <span>LOCATION: PACIFIC TIME (PST)</span>
+          <span>•</span>
+          <span>SYSTEM STATUS: NORMAL</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ================= INTERACTIVE SCRIPT ================= -->
+  <script>
+    // Set dynamic copyright year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu toggle logic
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Form Submission Handler
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      const form = document.getElementById('intake-form');
+      const successBox = document.getElementById('form-success');
+      
+      // Simulate direct transmission state
+      form.classList.add('hidden');
+      successBox.classList.remove('hidden');
+    }
+
+    function resetForm() {
+      const form = document.getElementById('intake-form');
+      const successBox = document.getElementById('form-success');
+      form.reset();
+      form.classList.remove('hidden');
+      successBox.classList.add('hidden');
+    }
+  </script>
+
+</body>
+</html>
